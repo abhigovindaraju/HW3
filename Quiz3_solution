@@ -1,0 +1,50 @@
+BEGIN
+--------------------------------------------------------------------
+1. What is the _mask value for LED1? 
+   What is the address of FIOSET?
+
+FIOMASK ADDRESS (0x2009C010) - VALUE 0xFFFF0FFF
+FIO0SET ADDRESS (0x2009C018) - VALUE 0x00008000
+
+--------------------------------------------------------------------
+2. What is the RS232 Frame?
+
+The RS-232 serial communication protocol is a standard protocol used in asynchronous serial communication.
+A frame is a complete and nondivisible packet of bits. 
+A frame includes both information (e.g., data and characters) and overhead (e.g., start bit, error checking and stop bits). 
+In asynchronous serial protocols such as RS-232, the frame consists of one start bit, seven or eight data bits, 
+parity bits, and stop bits. A timing diagram for an RS-232 frame consisting of one start bit, 7 data bits, 
+one parity bits and two stop bits. 
+Note that the exact structure of the frame must be agreed upon by both transmitter and 
+receiver before the comm-link must be opened.
+
+--------------------------------------------------------------------
+3. Explain the start and stop conditions of i2c?
+
+Prior to any transaction on the bus, a START condition needs to be issued on the bus. 
+The start condition acts as a signal to all connected IC's that something is about to be transmitted on the bus. 
+As a result, all connected chips will listen to the bus.
+
+After a message has been completed, a STOP condition is sent. 
+This is the signal for all devices on the bus that the bus is available again (idle). 
+If a chip was accessed and has received data during the last transaction, it will now process this information.
+
+--------------------------------------------------------------------
+4. Is the i2c acknowledge SDA LOW or SDA HIGH?
+
+For START condition - SDA has to go LOW.
+
+--------------------------------------------------------------------
+5. Tell me about the DDR3 write leveling Concept in one sentence.  
+   (ref: slides)
+
+On DDR3 To compensate for this mismatched loading on the write cycle, 
+the memory controller outputs a special command to the DDR3 memory devices 
+to put it into a special write leveling state.
+
+
+
+
+
+
+END
